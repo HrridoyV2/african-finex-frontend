@@ -1,15 +1,19 @@
 import { Button } from "antd";
 import React, { useContext, useEffect, useState } from "react";
 import { useId } from "react-id-generator";
+import { useHistory } from "react-router-dom";
 import { UserContext } from "../../App";
 
 
 function Page4({ children, ...rest }) {
-  const [htmlId] = useId();
+  const history = useHistory();
+  const [loading, setLoading] = useState(false);
+  const swapId = Math.floor(Math.random() * Math.floor(1000) + 100);
   const { buyerWallet, setBuyerWallet } = useContext(UserContext);
 
   const postBuy = () => {
-    const bulkData = { buyerWallet, SwapId: htmlId, IBAN: "ABCDEFG1234567" };
+    setLoading(true);
+    const bulkData = { buyerWallet, SwapId: swapId, IBAN: "ABCDEFG1234567" };
 
     fetch("https://african-finex.herokuapp.com/buy", {
       method: "POST",
@@ -22,33 +26,32 @@ function Page4({ children, ...rest }) {
       .then((data) => {
         if (data) {
           alert("Successfully posted");
+          history.push("/sell")
         }
       });
   };
 
   return (
-    <div className="container border my-5">
-      <div className="container p-5">
+    <div className="container container_border my-5 px-5 pt-5">
         <h4 className="my-5">Transfers funds to the following account</h4>
         <div className="my-5">
           <h3>IBAN: ABCDEFG1234567</h3>
-          <h3>Swap ID: {htmlId}</h3>
+          <h3>Swap ID: {swapId}</h3>
         </div>
         <h4>
           As soon as the funds are received the transaction to your BSC wallet
           will be made the following address.
         </h4>
-        <h4 className="my-5">{buyerWallet}</h4>
+        <h4 className="my-5">({buyerWallet ? buyerWallet: "wallet address"})</h4>
         <a href="#" className="text-center">
           <h4>Doubts? Discord or Telegram</h4>
         </a>
         <div className="text-center">
-          <Button variant="danger" className="px-5 mt-5 " onClick={postBuy}>
-            Next
-          </Button>
+          <button disabled={loading} variant="danger" className="px-5 btn_next bg-light btn-block my-4 " onClick={postBuy}>
+            {loading? "Submitting...":"Next"}
+          </button>
         </div>
       </div>
-    </div>
   );
 }
 

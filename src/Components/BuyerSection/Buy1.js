@@ -21,14 +21,15 @@ function FirstPage() {
     }
     
     return (
-        <div>
+        <div className="container container_border my-5 px-5 pt-5">
             <form>
-            <ReactCountryFlagsCurrencySelect onSelect={onSelectFlag} /><br />
-            <input type='number' id='name' name='name' placeholder='quantity' />
+            <ReactCountryFlagsCurrencySelect onSelect={onSelectFlag} className="mb-5" />
+            <br/>
+            <input type='number' id='name' name='name' placeholder='quantity' className="form-control mt-5" /><br/>
                 <p>Total cost @price AOA/TAOA</p>
 
-                <Link to="/page2">
-                <button>Next</button>
+                <Link to="/buy2">
+                <button className="mb-4 btn_next btn-block">Next</button>
                 </Link>
                 </form>
         </div>

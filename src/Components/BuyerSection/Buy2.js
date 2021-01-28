@@ -1,10 +1,10 @@
-import { Button } from 'antd';
-import { connect } from 'formik';
+
 import React, { useContext, useState } from 'react'
+import { Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import WAValidator from "wallet-address-validator";
 import { UserContext } from '../../App';
-import { buy } from '../../redux';
+
 function SecondPage() {
   const [wallet, setWallet] = useState("");
   const { buyerWallet, setBuyerWallet } = useContext(UserContext);
@@ -14,7 +14,7 @@ function SecondPage() {
     const valid = WAValidator.validate(wallet, "BTC");
     if (valid) {
       alert("This is a valid address");
-      history.push("/page3");
+      history.push("/buy3");
       setBuyerWallet(wallet);
     } else {
       alert("Address INVALID");
@@ -22,8 +22,7 @@ function SecondPage() {
   };
 
     return (
-        <div className="container border my-5">
-      <div className="container p-5">
+        <div className="container container_border my-5 px-5 pt-5">
           
         <input
           onBlur={(e) => setWallet(e.target.value)}
@@ -37,19 +36,21 @@ function SecondPage() {
           Pay close attention mistakes will make you loose all your assets and
           there is nothing we can do to help
         </h4>
-      </div>
-      <a
+
+        <a
         href="https://www.binance.org/en/smartChain"
         target="_blank"
         className="text-center"
       >
-        <h4>Don't have a BSC wallet yet?</h4>
+        <h4 className="my-3">Don't have a BSC wallet yet?</h4>
       </a>
-      <div className="text-center py-5">
-        <Button variant="danger" className="px-5" onClick={isValid}>
+      
+        <button className="mb-4 btn_next btn-block" onClick={isValid}>
           Next
-        </Button>
-      </div>
+        </button>
+      
+      
+      
     </div>
     )
 }

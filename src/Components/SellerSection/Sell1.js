@@ -9,8 +9,8 @@ function Sell() {
     setToken(e);
   };
   return (
-    <div className="container border my-5">
-      <div className="container">
+    <div className="container container_border my-5 px-5 pt-5">
+      
         <h4> Stablecoin gateway - Sell</h4>
         <select
           key={"down"}
@@ -29,20 +29,18 @@ function Sell() {
             token3
           </option>
         </select>
-        <div>
-          <label htmlFor="quantity">
-            <input type="number" placeholder="Quantity" />
-          </label>
-        </div>
-        <div className="mt-5">
+        
+            <input type="number" placeholder="Quantity" className="form-control mt-5" />
+        
+        <div className="mt-3">
           <h3>You will get X AOA @Preco AOA/TAOA</h3>
         </div>
         <Link to="/sell2">
-          <Button variant="danger" className="px-5 mt-5 text-center">
+          <button className="px-5 my-4 btn_next btn-block">
             Next
-          </Button>
+          </button>
         </Link>
-      </div>
+      
     </div>
   );
 }

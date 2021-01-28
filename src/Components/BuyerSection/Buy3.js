@@ -10,7 +10,6 @@ import {
 import { Link } from "react-router-dom";
 
 function Page3() {
-  //   const [bank, setBank] = useState([]); this state will be set after fetching
 
   const [selectedBank, setSelectedBank] = useState("Chose Your Bank");
 
@@ -18,27 +17,27 @@ function Page3() {
     setSelectedBank(e);
   };
   return (
-    <div className="container border my-5">
-      <div className="container p-5">
+    <div className="container container_border my-5 px-5 pt-5">
+      
         <div className="my-5">
         <SplitButton
             key={"down"}
             id={`dropdown-button-drop-${"down"}`}
             drop={"down"}
-            variant="secondary"
+            variant=""
             title={selectedBank}
           >
             <Dropdown.Item onSelect={handleChange} eventKey={"Bank1"}>
-              Bank1
+              Bank 1
             </Dropdown.Item>
             <Dropdown.Item onSelect={handleChange} eventKey={"Bank2"}>
-              Bank2
+              Bank 2
             </Dropdown.Item>
             <Dropdown.Item onSelect={handleChange} eventKey={"Bank3"}>
-              Bank3
+              Bank 3
             </Dropdown.Item>
             <Dropdown.Item onSelect={handleChange} eventKey={"Bank4"}>
-              Bank4
+              Bank 4
             </Dropdown.Item>
           </SplitButton>
           
@@ -51,12 +50,12 @@ function Page3() {
         <a href="#" className="ml-5">
           <h5>How long does it usually take?</h5>
         </a>
-        <Link to="/page4">
-          <Button variant="danger" className="px-5 mt-5 text-center">
+        <Link to="/buy4">
+          <button className="px-5 my-4 btn_next btn-block">
             Next
-          </Button>
+          </button>
         </Link>
-      </div>
+      
     </div>
   );
 }

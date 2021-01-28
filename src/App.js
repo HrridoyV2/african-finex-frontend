@@ -1,3 +1,4 @@
+import './App.scss';
 import {
   BrowserRouter as Router,
   Switch,
@@ -43,13 +44,16 @@ function App() {
           <Route exact path='/'>
             <Buy1 />
           </Route>
-          <Route exact path='/page2'>
+          <Route exact path='/buy1'>
+            <Buy1 />
+          </Route>
+          <Route exact path='/buy2'>
             <Buy2 />
           </Route>
-          <Route exact path="/page3">
+          <Route exact path="/buy3">
             <Buy3 />
           </Route>
-          <Route exact path="/page4">
+          <Route exact path="/buy4">
             <Buy4 />
           </Route>
           <Route exact path="/sell">

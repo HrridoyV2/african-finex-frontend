@@ -8,8 +8,8 @@ function Sell3() {
   let history = useHistory();
   const { account, setAccount } = useContext(UserContext);
   return (
-    <div className="container border my-5">
-      <div className="container p-5">
+    <div className="container container_border my-5 px-5 pt-5">
+      
         <input
           type="text"
           className="form-control"
@@ -20,11 +20,11 @@ function Sell3() {
           <a href="#">
             <h4>Where can I find my IBAN</h4>
           </a>
-          <Button variant="danger" onClick={() => history.push("/sell4")}>
+          <button className="my-4 btn_next btn-block" onClick={() => history.push("/sell4")}>
             Next
-          </Button>
+          </button>
         </div>
-      </div>
+      
     </div>
   );
 }
