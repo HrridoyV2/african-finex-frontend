@@ -26,14 +26,15 @@ function Page3() {
             drop={"down"}
             variant=""
             title={selectedBank}
+            style={{border: "1px solid black"}}
           >
-            <Dropdown.Item onSelect={handleChange} eventKey={"Bank1"}>
+            <Dropdown.Item onSelect={handleChange} eventKey={"Bank 1"}>
               Bank 1
             </Dropdown.Item>
-            <Dropdown.Item onSelect={handleChange} eventKey={"Bank2"}>
+            <Dropdown.Item onSelect={handleChange} eventKey={"Bank 2"}>
               Bank 2
             </Dropdown.Item>
-            <Dropdown.Item onSelect={handleChange} eventKey={"Bank3"}>
+            <Dropdown.Item onSelect={handleChange} eventKey={"Bank 3"}>
               Bank 3
             </Dropdown.Item>
             <Dropdown.Item onSelect={handleChange} eventKey={"Bank4"}>

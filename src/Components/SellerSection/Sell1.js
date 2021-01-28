@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import React, { useContext, useState } from "react";
+import { Dropdown, SplitButton } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 
@@ -9,26 +10,28 @@ function Sell() {
     setToken(e);
   };
   return (
-    <div className="container container_border my-5 px-5 pt-5">
+    <div className="container container_b
+    order my-5 px-5 pt-5">
       
         <h4> Stablecoin gateway - Sell</h4>
-        <select
+        <SplitButton
           key={"down"}
           id={`dropdown-button-drop-${"down"}`}
           drop={"down"}
-          variant="secondary"
+          variant=""
           title={token || "Choose a token"}
+          style={{border: "1px solid black"}}
         >
-          <option onSelect={handleChange} value={"token1"}>
-            token1
-          </option>
-          <option onSelect={handleChange} value={"token2"}>
-            token2
-          </option>
-          <option onSelect={handleChange} value={"token3"}>
-            token3
-          </option>
-        </select>
+          <Dropdown.Item onSelect={handleChange} eventKey={"token 1"}>
+            token 1
+          </Dropdown.Item>
+          <Dropdown.Item onSelect={handleChange} eventKey={"token 2"}>
+            token 2
+          </Dropdown.Item>
+          <Dropdown.Item onSelect={handleChange} eventKey={"token 3"}>
+            token 3
+          </Dropdown.Item>
+        </SplitButton>
         
             <input type="number" placeholder="Quantity" className="form-control mt-5" />
         
