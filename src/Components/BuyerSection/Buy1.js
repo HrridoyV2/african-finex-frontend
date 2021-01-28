@@ -23,7 +23,9 @@ function FirstPage() {
     return (
         <div className="container container_border my-5 px-5 pt-5">
             <form>
-            <ReactCountryFlagsCurrencySelect onSelect={onSelectFlag} className="mb-5" />
+            <ReactCountryFlagsCurrencySelect onSelect={onSelectFlag} 
+            searchable={true}
+            className="mb-5" />
             <br/>
             <input type='number' id='name' name='name' placeholder='quantity' className="form-control mt-5" /><br/>
                 <p>Total cost @price AOA/TAOA</p>
